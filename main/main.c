@@ -186,48 +186,48 @@ static void update_button_state(void)
     int gpio13_level = gpio_get_level(GPIO_NUM_13);
     int gpio12_level = gpio_get_level(GPIO_NUM_12);
 
-    ESP_LOGI(TAG, "GPIO2 state: %d, GPIO13 level: %d", gpio2_state, gpio13_level);
-    ESP_LOGI(TAG, "GPIO26 state: %d, GPIO12 level: %d", gpio26_state, gpio12_level);
+    // ESP_LOGI(TAG, "GPIO2 state: %d, GPIO13 level: %d", gpio2_state, gpio13_level);
+    // ESP_LOGI(TAG, "GPIO26 state: %d, GPIO12 level: %d", gpio26_state, gpio12_level);
 
     if (gpio2_state == 0 && gpio13_level == 0)
     {
-        lv_label_set_text(label1, "Comp 1 Desligado");
+        lv_label_set_text(label1, "Linha 1\nDesligada");
         lv_obj_set_style_local_bg_color(btn1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_RED);
     }
     else if (gpio2_state == 0 && gpio13_level == 1)
     {
-        lv_label_set_text(label1, "Comp 1 Desligando");
+        lv_label_set_text(label1, "Linha 1\nDesligando");
         lv_obj_set_style_local_bg_color(btn1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_YELLOW);
     }
     else if (gpio2_state == 1 && gpio13_level == 0)
     {
-        lv_label_set_text(label1, "Comp 1 Ligando");
+        lv_label_set_text(label1, "Linha 1\nLigando");
         lv_obj_set_style_local_bg_color(btn1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_YELLOW);
     }
     else if (gpio2_state == 1 && gpio13_level == 1)
     {
-        lv_label_set_text(label1, "Comp 1 Ligado");
+        lv_label_set_text(label1, "Linha 1\nLigada");
         lv_obj_set_style_local_bg_color(btn1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_GREEN);
     }
 
     if (gpio26_state == 0 && gpio12_level == 0)
     {
-        lv_label_set_text(label2, "Comp 2 Desligado");
+        lv_label_set_text(label2, "Linha 2\nDesligad2");
         lv_obj_set_style_local_bg_color(btn2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_RED);
     }
     else if (gpio26_state == 0 && gpio12_level == 1)
     {
-        lv_label_set_text(label2, "Comp 2 Desligando");
+        lv_label_set_text(label2, "Linha 2\nDesligando");
         lv_obj_set_style_local_bg_color(btn2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_YELLOW);
     }
     else if (gpio26_state == 1 && gpio12_level == 0)
     {
-        lv_label_set_text(label2, "Comp 2 Ligando");
+        lv_label_set_text(label2, "Linha 2\nLigando");
         lv_obj_set_style_local_bg_color(btn2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_YELLOW);
     }
     else if (gpio26_state == 1 && gpio12_level == 1)
     {
-        lv_label_set_text(label2, "Comp 2 Ligado");
+        lv_label_set_text(label2, "Linha 2\nLigada");
         lv_obj_set_style_local_bg_color(btn2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_GREEN);
     }
 }
